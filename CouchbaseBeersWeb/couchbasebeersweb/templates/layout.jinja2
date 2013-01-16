@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:tal="http://xml.zope.org/namespaces/tal"
+       xmlns:metal="http://xml.zope.org/namespaces/metal">
+    <head>
+        <meta charset="utf-8" />
+        <title>Couchbase and Pyramid Sample</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="/static/Site.css" rel="stylesheet" type="text/css" />
+        <script language="javascript" type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.0.min.js"></script>
+        <!--<link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />-->
+        <!--<script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>-->
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title"><img src="/static/images/couchbase-logo.png" /> </p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="http://www.couchbase.com">Couchbase</a></li>                            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            <section class="content-wrapper main-content clear-fix" metal:define-macro="main">
+                <div id="content">{% block featured %}{% endblock %}</div>
+                <div id="content">{% block content %}{% endblock %}</div>
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; <span id="copyrightDate"></span> - Couchbase Beers Python</p>
+                </div>
+            </div>
+        </footer>        
+        <script language="javascript" type="text/javascript">{% block scripts %}{% endblock %}</script>
+        <script language="javascript">
+            window.onload = function(e)
+            {                
+                if (document.getElementById("copyrightDate").innerText) {
+                    document.getElementById("copyrightDate").innerText = new Date().getFullYear();
+                } else {
+                    document.getElementById("copyrightDate").textContent = new Date().getFullYear();
+                }
+            }
+        </script>
+    </body>
+</html>
+

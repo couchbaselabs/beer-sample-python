@@ -1,0 +1,85 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Details</h2>
+
+<script src="/Scripts/jquery.validate.min.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<form action="/breweries/update" method="POST">
+    <fieldset>
+        <legend>Brewery</legend>
+
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            {{model.name}}
+        </div>
+
+        <div class="editor-label">
+            City
+        </div>
+        <div class="editor-field">
+            {{model.city}}
+        </div>
+
+        <div class="editor-label">
+            State
+        </div>
+        <div class="editor-field">
+            {{model.state}}
+        </div>
+
+        <div class="editor-label">
+            Code
+        </div>
+        <div class="editor-field">
+            {{model.code}}
+        </div>
+
+        <div class="editor-label">
+            Country
+        </div>
+        <div class="editor-field">
+            {{model.country}}
+        </div>
+
+        <div class="editor-label">
+            Phone
+        </div>
+        <div class="editor-field">
+            {{model.phone}}
+        </div>
+
+        <div class="editor-label">
+            Website
+        </div>
+        <div class="editor-field">
+            {{model.website}}
+        </div>
+       
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            {{model.description}}
+        </div>
+        
+        <div class="editor-label">
+            Beers
+        </div>        
+        {% for item in model.beers %}        
+        <div class="editor-field">
+            <div style="margin-left:10px;">- {{item.name}}</div>
+        </div>
+        {% endfor %}
+       
+    </fieldset>
+</form>
+
+<div>
+    <a href="/breweries/index">Back to List</a>
+</div>
+
+{% endblock %}

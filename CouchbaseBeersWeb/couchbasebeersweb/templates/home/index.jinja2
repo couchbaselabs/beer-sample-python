@@ -1,0 +1,41 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+        
+<div metal:fill-slot="featured">
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>Beer Sample Database.</h1>
+                <h2>{{message}}</h2>
+            </hgroup>
+            <p>
+                To learn more about the Couchbase Python Client visit
+                <a href="http://www.couchbase.com/develop/python/current" title="Couchbase Developer Portal">http://couchbase.com/develop/python/next</a>.
+                The page features <mark>tutorials and samples</mark> to help you get the most from Couchbase.
+                If you have any questions about Couchbase development visit
+                <a href="http://www.couchbase.com/forums/sdks/sdks" title="Couchbase Forums">our SDK forums</a>.
+            </p>
+        </div>
+    </section>
+</div>
+
+<div metal:fill-slot="content">
+<h3>Browse the Beer Sample Database</h3>
+<ol class="round">
+    <li class="one">
+        <a href="/beers/index?pagesize=25">Lookup beers</a>
+    </li>
+
+    <li class="two">
+        <a href="/breweries/index?pagesize=25">Lookup breweries</a>
+    </li>
+
+    <li class="three">
+        <a href="/countries/index">Lookup breweries by country</a>
+    </li>
+
+</ol>
+
+{% endblock %}

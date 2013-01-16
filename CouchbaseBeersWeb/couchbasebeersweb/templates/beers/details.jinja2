@@ -1,0 +1,81 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Details</h2>
+
+<script src="/Scripts/jquery.validate.min.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <fieldset>
+        <legend>Beer</legend>
+
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            {{model.name}}
+        </div>
+
+        <div class="editor-label">
+            ABV
+        </div>
+        <div class="editor-field">
+            {{model.abv}}
+        </div>
+
+        <div class="editor-label">
+            IBU
+        </div>
+        <div class="editor-field">
+            {{model.ibu}}
+        </div>
+
+        <div class="editor-label">
+            SRM
+        </div>
+        <div class="editor-field">
+            {{model.srm}}
+        </div>
+
+        <div class="editor-label">
+            UPC
+        </div>
+        <div class="editor-field">
+            {{model.upc}}
+        </div>
+
+        <div class="editor-label">
+            Brewery ID
+        </div>
+        <div class="editor-field">
+            {{model.brewery_id}}
+        </div>
+
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            {{model.description}}
+        </div>
+        
+        <div class="editor-label">
+            Style
+        </div>
+        <div class="editor-field">
+            {{model.style}}
+        </div>
+        
+        <div class="editor-label">
+            Category
+        </div>
+        <div class="editor-field">
+            {{model.category}}
+        </div>
+                
+    </fieldset>
+
+<div>
+    <a href="/beers/index">Back to List</a>
+</div>
+
+{% endblock %}

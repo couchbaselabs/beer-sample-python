@@ -1,0 +1,82 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Index</h2>
+
+<p>
+    <a href="/beers/create">Create Beer</a>
+</p>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            ABV
+        </th>
+        <th>
+            IBU
+        </th>
+        <th>
+            SRM
+        </th>
+        <th>
+            Brewery Id
+        </th>        
+        <th>
+            Description
+        </th>
+        <th>
+            Style
+        </th>
+        <th>
+            Category
+        </th>
+    </tr>
+
+    {% for item in model %}
+    <tr>
+        <td>
+            {{item["name"]}}
+        </td>
+        <td>
+            {{item["abv"]}}
+        </td>
+        <td>
+            {{item["ibu"]}}
+        </td>
+        <td>
+            {{item["srm"]}}
+        </td>
+        <td>
+            {{item["brewery_id"]}}
+        </td>
+        <td>
+            <a href="javascript:void(0);" title="{{item["description"]}}">Hover for Description</a>
+        </td>
+        <td>
+            {{item["style"]}}
+        </td>
+        <td>
+            {{item["category"]}}
+        </td>        
+        <td>
+             <a href="/beers/edit/{{item["id"]}}">Edit</a> |
+            <a href="/beers/details/{{item["id"]}}">Details</a> |
+            <a href="/beers/delete/{{item["id"]}}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4">
+            <a href="/beers/index?pagesize={{pageSize}}">List</a>
+            <a href="/beers/index?startkey={{previousKey}}&pagesize={{pageSize}}">&lt; Previous</a>
+            <a href="/beers/index?startkey={{nextStartKey}}&previouskey={{startKey}}&pagesize={{pageSize}}">Next &gt;</a>
+        </td>
+    </tr>
+
+</table>
+
+
+{% endblock %}

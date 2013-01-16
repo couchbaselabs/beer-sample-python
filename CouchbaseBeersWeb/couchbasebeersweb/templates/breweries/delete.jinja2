@@ -1,0 +1,79 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<form action="/breweries/save/delete" method="POST">
+    <fieldset>
+        <legend>Brewery</legend>
+
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            {{model.name}}
+        </div>
+
+        <div class="editor-label">
+            City
+        </div>
+        <div class="editor-field">
+            {{model.city}}
+        </div>
+
+        <div class="editor-label">
+            State
+        </div>
+        <div class="editor-field">
+            {{model.state}}
+        </div>
+
+        <div class="editor-label">
+            Code
+        </div>
+        <div class="editor-field">
+            {{model.code}}
+        </div>
+
+        <div class="editor-label">
+            Country
+        </div>
+        <div class="editor-field">
+            {{model.country}}
+        </div>
+
+        <div class="editor-label">
+            Phone
+        </div>
+        <div class="editor-field">
+            {{model.phone}}
+        </div>
+
+        <div class="editor-label">
+            Website
+        </div>
+        <div class="editor-field">
+            {{model.website}}
+        </div>
+       
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            {{model.description}}
+        </div>
+
+        <p>
+            <input type="hidden" name="id" value="{{model.id}}" />
+            <input type="submit" value="Delete"/>
+        </p>
+    </fieldset>
+</form>
+
+<div>
+    <a href="/breweries/index">Back to List</a>
+</div>
+
+{% endblock %}

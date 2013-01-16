@@ -1,0 +1,17 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Brewery counts by country</h2>
+
+<ul>
+    {% for item in model %}
+    <li>
+        <a href="/countries/provinces/{{item[0]}}">{{item[0]}}</a>        
+        ({{item[1]}})
+    </li>
+    {% endfor %}    
+</ul>
+
+
+{% endblock %}

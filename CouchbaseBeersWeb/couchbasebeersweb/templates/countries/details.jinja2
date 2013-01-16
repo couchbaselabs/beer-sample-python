@@ -1,0 +1,16 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Breweries in {{key[0]}}, {{key[1]}}, {{key[2]}}, {{key[3]}}</h2>
+
+<ul>
+    {% for item in model %}
+    <li>
+        <a href="/breweries/details/{{item.id}}">{{item.name}}</a>
+    </li>
+    {% endfor %}    
+</ul>
+
+<a href="/countries/index">Back to countries list</a>
+{% endblock %}

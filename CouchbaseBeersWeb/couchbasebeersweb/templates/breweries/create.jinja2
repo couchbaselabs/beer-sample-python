@@ -1,0 +1,80 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+<form action="/breweries/save/create" method="POST">
+    <fieldset>
+        <legend>Brewery</legend>
+
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            <input type="text" name="name" />
+        </div>
+
+        <div class="editor-label">
+            City
+        </div>
+        <div class="editor-field">
+            <input type="text" name="city" />
+        </div>
+
+        <div class="editor-label">
+            State
+        </div>
+        <div class="editor-field">
+            <input type="text" name="state" />
+        </div>
+
+        <div class="editor-label">
+            Code
+        </div>
+        <div class="editor-field">
+            <input type="text" name="code" />
+        </div>
+
+        <div class="editor-label">
+            Country
+        </div>
+        <div class="editor-field">
+            <input type="text" name="country" />
+        </div>
+
+        <div class="editor-label">
+            Phone
+        </div>
+        <div class="editor-field">
+            <input type="text" name="phone" />
+        </div>
+
+        <div class="editor-label">
+            Website
+        </div>
+        <div class="editor-field">
+            <input type="text" name="website" />
+        </div>
+       
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            <input type="text" name="description" />
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+</form>
+
+<div>
+    <a href="/breweries/index">Back to List</a>
+</div>
+
+{% endblock %}

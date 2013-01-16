@@ -1,0 +1,87 @@
+<!-- templates/root.jinja2 -->
+{% extends "templates/layout.jinja2" %}
+{% block content %}
+
+<h2>Edit</h2>
+
+<script src="/Scripts/jquery.validate.min.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<form action="/beers/save/edit" method="POST">
+    <fieldset>
+        <legend>Beer</legend>
+
+        <div class="editor-label">
+            Name
+        </div>
+        <div class="editor-field">
+            <input type="text" name="name" value="{{model.name}}" />
+        </div>
+
+        <div class="editor-label">
+            ABV
+        </div>
+        <div class="editor-field">
+            <input type="text" name="abv" value="{{model.abv}}"  />
+        </div>
+
+        <div class="editor-label">
+            IBU
+        </div>
+        <div class="editor-field">
+            <input type="text" name="ibu" value="{{model.ibu}}" />
+        </div>
+
+        <div class="editor-label">
+            SRM
+        </div>
+        <div class="editor-field">
+            <input type="text" name="srm" value="{{model.srm}}"  />
+        </div>
+
+        <div class="editor-label">
+            UPC
+        </div>
+        <div class="editor-field">
+            <input type="text" name="upc" value="{{model.upc}}"  />
+        </div>
+
+        <div class="editor-label">
+            Brewery ID
+        </div>
+        <div class="editor-field">
+            <input type="text" name="brewery_id" value="{{model.brewery_id}}"  />
+        </div>
+
+        <div class="editor-label">
+            Description
+        </div>
+        <div class="editor-field">
+            <input type="text" name="description" value="{{model.description}}"  />
+        </div>
+        
+        <div class="editor-label">
+            Style
+        </div>
+        <div class="editor-field">
+            <input type="text" name="style" value="{{model.style}}"  />
+        </div>
+        
+        <div class="editor-label">
+            Category
+        </div>
+        <div class="editor-field">
+            <input type="text" name="category" value="{{model.category}}"  />
+        </div>
+        
+        <p>
+            <input type="hidden" name="id" value="{{model.id}}" />
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+</form>
+
+<div>
+    <a href="/breweries/index">Back to List</a>
+</div>
+
+{% endblock %}
